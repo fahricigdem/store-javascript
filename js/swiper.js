@@ -8,8 +8,18 @@
  * 
  */
 
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM ready');
 
+document.addEventListener('DOMContentLoaded', function () {
+  //console.log('DOM ready');
 
+  let swiper = new Swiper('.swiper-container', {
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 });

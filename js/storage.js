@@ -7,4 +7,42 @@
  * https://www.w3schools.com/jsref/prop_win_localstorage.asp
  * https://developer.mozilla.org/de/docs/Web/API/Window/localStorage
  * 
+ * 
  */
+
+const likeElements = document.querySelectorAll(".like-btn");
+
+for (let i = 0; i < likeElements.length; i++) {
+    likeElements[i].classList.remove('liked')
+    likeElements[i].addEventListener("click", function () {
+        if (likeElements[i].classList.contains('liked')) {
+            likeElements[i].classList.remove('liked');
+            localStorage.removeItem(i);
+        }
+        else {
+            likeElements[i].classList.add('liked')
+            localStorage.setItem(i, "liked")
+        }
+    });
+}
+
+window.addEventListener('load', () => {
+    Object.keys(localStorage).map((key) => {
+        likeElements[parseInt(key)].classList.add('liked')
+    })
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
