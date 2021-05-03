@@ -26,7 +26,9 @@ for (let i = 0; i < likeElements.length; i++) {
     });
 }
 
-window.addEventListener('load', () => {
+
+document.addEventListener('DOMContentLoaded', function () {
+    //window.addEventListener('load', () => {
     Object.keys(localStorage).map((key) => {
         likeElements[parseInt(key)].classList.add('liked')
     })
