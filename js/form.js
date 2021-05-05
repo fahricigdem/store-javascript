@@ -10,6 +10,11 @@
  * 
  */
 
+document.getElementById("privacyTextP").addEventListener('click', () => {
+    var checkbox = document.forms["support-form"]["privacy"]
+    checkbox.checked = !checkbox.checked
+})
+
 document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('support-form').addEventListener('submit', function submitForm(event) {
@@ -17,12 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var bodyFormData = new FormData();
         validateForm(true) && sendData(bodyFormData)
     })
-
-    document.getElementById("privacyTextP").addEventListener('click', () => {
-        var checkbox = document.forms["support-form"]["privacy"]
-        checkbox.checked = !checkbox.checked
-    })
-
 });
 
 function validateForm(validate) {
