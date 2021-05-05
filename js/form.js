@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
         validateForm(true) && sendData(bodyFormData)
     })
 
+    document.getElementById("privacyTextP").addEventListener('click', () => {
+        var checkbox = document.forms["support-form"]["privacy"]
+        checkbox.checked = !checkbox.checked
+    })
+
 });
 
 function validateForm(validate) {
@@ -29,8 +34,8 @@ function validateForm(validate) {
     })
 
     document.forms["support-form"]["privacy"].checked == false ?
-        (document.forms["support-form"]["privacy"].setAttribute("style", "box-shadow: 0 0 0 2px red;"), validate = false)
-        : document.forms["support-form"]["privacy"].setAttribute("style", "box-shadow: 0;")
+        (document.getElementById("privacyTextDiv").setAttribute("style", "box-shadow: 0 0 0 2px red;"), validate = false)
+        : document.getElementById("privacyTextDiv").setAttribute("style", "box-shadow: 0;")
 
     return validate
 
