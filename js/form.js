@@ -50,7 +50,7 @@ function sendData(bodyFormData) {
         .then(function (response) {
             //handle success
             console.log(response);
-            document.getElementById("submitButton").value += ' (' + response.data + ')';
+            document.getElementById("submitButton").value = response.data
         })
         .catch(function (response) {
             //handle error
