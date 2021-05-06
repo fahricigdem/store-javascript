@@ -15,6 +15,8 @@ document.getElementById("privacyTextP").addEventListener('click', () => {
     checkbox.checked = !checkbox.checked
 })
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('support-form').addEventListener('submit', function submitForm(event) {
@@ -32,9 +34,10 @@ function validateForm(validate) {
             : element.classList.remove('border-red-500')
     })
 
-    document.forms["support-form"]["privacy"].checked == false ?
-        (document.getElementById("privacyTextDiv").setAttribute("style", "box-shadow: 0 0 0 2px red;"), validate = false)
-        : document.getElementById("privacyTextDiv").setAttribute("style", "box-shadow: 0;")
+    let checkbox = document.forms["support-form"]["privacy"]
+    checkbox.checked == false ?
+        checkbox.nextElementSibling.classList.add('text-red-500')
+        : checkbox.nextElementSibling.classList.remove('text-red-500');
 
     return validate
 
